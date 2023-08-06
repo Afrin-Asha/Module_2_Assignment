@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>Ajax</title>
+    </head>
+    <body>
+        
+         <button onclick="fetchData()">Print Data</button>
+         <div id="dataContainer">
+            <!-- The data will be displayed here -->
+        </div>
+        <script>
+            
+            function fetchData(){
+              let URL ="https://jsonplaceholder.typicode.com/posts";
+              let config ={method :"GET"};
+
+              fetch (URL,config)
+              .then(response=>response.json())
+              .then(result=>displayData(result))
+              .catch(error=>console.log(error));
+            }
+            function displayData(data) {
+                const dataContainer = document.getElementById('dataContainer');
+                dataContainer.innerHTML = '';
+
+                // This Creates and appends new elements to display the data
+                data.forEach(item => {
+                    const dataItemElement = document.createElement('p');
+                    dataItemElement.textContent = item.title;
+                    dataContainer.appendChild(dataItemElement);
+                });
+                }
+
+
+        </script> 
+    </body>
+</html>   

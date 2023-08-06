@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            
+            div {
+                
+                border: 2px solid black;
+                margin: 10px 20px;
+                justify-content: center; 
+                align-items: center;
+                width: 500px;
+                height: 400px;
+                font-size: 40px;
+                
+            }
+            img{    
+            max-width: 100%; /* Ensure the image doesn't exceed the container width */
+            max-height: 100%;
+            }
+        </style>
+    
+        <title>Image Switcher</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+    <body>
+        <div style="background-color: rgb(147, 147, 212); color: white; padding: 10px;">
+           
+            <img src="https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmF0dXJhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            id ="MyImg">
+
+            <p> This  is an image</p>
+
+         
+
+        </div>
+        
+         <button onclick="Change()" style=" color: black; margin-left: 20px;  padding: 10px;">Change Image</button>
+        
+        <script>
+            function Change(){
+              let myImage= document.getElementById('MyImg');
+              let divText =document.getElementsByTagName('p')[0];
+              divText.innerHTML = "This is a new Image";
+              myImage.src='https://plus.unsplash.com/premium_photo-1666896192348-dbd2afd19b07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=775&q=80';
+              myImage.height="320";
+              myImage.width="600";
+
+            }
+           
+
+        </script> 
+    </body>
+</html>   
